@@ -1,0 +1,21 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+.link-btn {
+    display: block;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.link-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+}

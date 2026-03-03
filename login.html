@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center relative">
+
+    <!-- Back to Home -->
+    <a href="index.html"
+       class="absolute top-6 left-6 text-white text-sm 
+              bg-white/10 backdrop-blur-md px-4 py-2 rounded-full 
+              border border-white/20 hover:bg-white/20 transition">
+        ← Kembali
+    </a>
+
+    <!-- Card -->
+    <div class="w-full max-w-md p-8 rounded-3xl 
+                bg-white/10 backdrop-blur-xl 
+                border border-white/20 
+                shadow-2xl text-white">
+
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">Admin Login</h2>
+            <p class="text-sm opacity-70 mt-2">Silakan masuk untuk mengelola link</p>
+        </div>
+
+        <!-- Username -->
+        <div class="mb-5">
+            <label class="block mb-2 text-sm opacity-80">Username</label>
+            <input 
+                type="text" 
+                id="username"
+                class="w-full px-4 py-3 rounded-xl 
+                       bg-white/10 border border-white/20
+                       focus:outline-none focus:ring-2 focus:ring-white/40
+                       placeholder-white/50"
+                placeholder="Masukkan username">
+        </div>
+
+        <!-- Password -->
+        <div class="mb-6">
+            <label class="block mb-2 text-sm opacity-80">Password</label>
+            <input 
+                type="password" 
+                id="password"
+                class="w-full px-4 py-3 rounded-xl 
+                       bg-white/10 border border-white/20
+                       focus:outline-none focus:ring-2 focus:ring-white/40
+                       placeholder-white/50"
+                placeholder="Masukkan password">
+        </div>
+
+        <!-- Button -->
+        <button 
+            onclick="submitLogin()" 
+            class="w-full py-3 rounded-xl font-semibold
+                   bg-white text-indigo-600
+                   hover:scale-105 hover:shadow-xl
+                   transition duration-300">
+            Masuk
+        </button>
+
+        <!-- Error -->
+        <p id="errorMessage"
+           class="text-red-300 text-sm mt-4 text-center hidden">
+            Username atau password salah!
+        </p>
+
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+
+    <script>
+        function submitLogin() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("Username dan password wajib diisi");
+                return;
+            }
+
+            login(username, password);
+        }
+    </script>
+
+</body>
+</html>
